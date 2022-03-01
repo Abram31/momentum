@@ -15,9 +15,19 @@ class Creetings {
             partOfDay = "Evening"
         }
         blockCreetings?.innerHTML =`
-        <span>Good ${partOfDay}</span>
+        <span>Good ${partOfDay}</span> <input class = "text-field-input" id = "input-id" type ="text" placeholder="[Enter name]">
         `
+    }
+    saveName() {
+        const input = document.getElementById('input-id')
+        localStorage.setItem('name', input?.value)
+    }
+    showName () {
+        const input = document.getElementById('input-id')
+        localStorage.getItem('name') ? input.value = localStorage.getItem('name'): false;
     }
 }
 
 export let innerCreetings = new Creetings().innerCreetings
+export let saveName = new Creetings().saveName
+export let showName = new Creetings().showName

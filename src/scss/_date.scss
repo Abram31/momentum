@@ -19,7 +19,23 @@
   .date-creetings {
     font-size: $fontSizeCreeting;
 
-  }
+    input[type='text'] {
+      background-color: #a9a9a917;
+      color: white;
+      font-size: 1.5rem;
+      width: 9rem;
+      border: none;
+      outline: 0;
+}
+
+
+.text-field-input {
+outline: 0;
+box-shadow: 0 0 0 0 rgba(158, 158, 158, 0.25);
+}
+    }
+
+  
   .date-update {
   }
   .date-phrase {

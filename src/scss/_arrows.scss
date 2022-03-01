@@ -1,0 +1,26 @@
+
+.arrows-left,
+.arrows-right {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: $sizeArrows;
+    height: $sizeArrows;
+    top: 65%;
+    cursor: pointer;
+    transition: .4s;
+}
+.arrows-left:active,
+.arrows-right:active {
+    transform: scale(0.8);
+}
+
+.arrows-left {
+    background-image: url(../assets/svg/slider-prev.svg);
+    left: $paddingWithBorder;
+}
+.arrows-right {
+    background-image: url(../assets/svg/slider-next.svg);
+    right: $paddingWithBorder;
+
+}

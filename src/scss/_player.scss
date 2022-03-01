@@ -1,0 +1,46 @@
+@import 'base';
+
+
+.player {
+    padding-left: $paddingWithBorder;
+    .player-arrows {
+        display: flex;
+    
+        .player-arrows-prev,
+        .player-arrows-play-pause,
+        .player-arrows-next {
+        background-size: contain;
+        background-repeat: no-repeat;
+        width:$sizePlayPausePrevNext;
+        height: $sizePlayPausePrevNext;
+    
+    }
+        .player-arrows-prev {
+            background-image: url(../assets/svg/play-prev.svg);
+        }
+        .player-arrows-play-pause {
+            background-image: url(../assets/svg/play.svg);
+    
+        }
+        .player-arrows-next {
+            background-image: url(../assets/svg/play-next.svg);
+    
+        }
+    
+    }
+
+    .play-list {
+        list-style:none;
+
+        .track:before {
+            content: '\2713';
+            margin-right: .5rem;
+
+
+        }
+    }
+
+}
+
+
+

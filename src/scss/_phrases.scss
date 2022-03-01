@@ -1,0 +1,15 @@
+@import 'base';
+
+.date-update {
+    background-image: url(../assets/svg/reload.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: $sizePlayPausePrevNext;
+    height: $sizePlayPausePrevNext;
+    transition: .4s;
+    cursor: pointer;
+}
+.date-update:active {
+    transform: scale(0.8);
+}

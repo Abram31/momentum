@@ -1,0 +1,22 @@
+$fontSizeTime: 4rem;
+$fontSizeDate: 1rem;
+$fontSizeCreeting: 2rem;
+
+$sizePlayPausePrevNext: 2rem;
+
+$sizeArrows:2rem;
+$paddingWithBorder:1rem;
+
+
+
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-image: url(https://github.com/rolling-scopes-school/stage1-tasks/blob/assets/images/afternoon/02.jpg?raw=true);
+  background-size: cover;
+   color: white;
+}

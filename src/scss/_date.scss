@@ -1,0 +1,27 @@
+@import 'base';
+
+.date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  gap: 1rem;
+
+  
+  .date-time {
+    font-size: $fontSizeTime;
+  }
+  
+  .date-day-date {
+    font-size: $fontSizeDate;
+
+  }
+  .date-creetings {
+    font-size: $fontSizeCreeting;
+
+  }
+  .date-update {
+  }
+  .date-phrase {
+  }
+}

@@ -1,3 +1,5 @@
+export const blockUpdatePhrases = document.querySelector('.date-update')
+
 
 let dataPhrase: object;
 class Quotes {
@@ -20,11 +22,11 @@ class Quotes {
         getQuotes()
             .then(() => blockPhrase?.innerHTML = `
         <span>${dataPhrase.text}</span> </br>
-        <span>${dataPhrase.author}</span>
+        <span>${dataPhrase.author != null ? dataPhrase.author : '' }</span>
         `)
     }
+    
 }
 
 export let getQuotes = new Quotes().getQuotes
-
 export let innerQuotes = new Quotes().innerQuotes

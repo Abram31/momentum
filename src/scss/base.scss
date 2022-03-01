@@ -12,11 +12,14 @@ $paddingWithBorder:1rem;
 
 body {
   position: relative;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  gap: 8rem;
   align-items: center;
-  justify-content: flex-end;
   background-image: url(https://github.com/rolling-scopes-school/stage1-tasks/blob/assets/images/afternoon/02.jpg?raw=true);
   background-size: cover;
-   color: white;
+  color: white;
+
 }

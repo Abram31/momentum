@@ -64,9 +64,8 @@ class includesDate {
 
     innerDay() {
         const date: object = new Date();
-       
-
     }
+   
 }
 
 export let innerDate = new includesDate().innerDate

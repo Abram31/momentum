@@ -1,5 +1,5 @@
-$fontSizeTime: 4rem;
-$fontSizeDate: 1rem;
+$fontSizeTime: 6rem;
+$fontSizeDate: 1.5rem;
 $fontSizeCreeting: 2rem;
 
 $sizePlayPausePrevNext: 2rem;
@@ -16,10 +16,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 8rem;
+  gap: 6rem;
   align-items: center;
-  background-image: url(https://github.com/rolling-scopes-school/stage1-tasks/blob/assets/images/afternoon/02.jpg?raw=true);
+  // background-image: url(https://github.com/rolling-scopes-school/stage1-tasks/blob/assets/images/afternoon/02.jpg?raw=true);
   background-size: cover;
   color: white;
+  background-color: #0000007a;
+  background-blend-mode: multiply;
+  transition:  background 2s ease-in-out;
 
 }

@@ -1,10 +1,36 @@
+@import 'base';
 .weather {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    gap: 1rem;
     padding-right: $paddingWithBorder;
 
     .weather-city {
+        font-size: $fontSizeCreeting;
+
+        input[type='text'] {
+            background-color: #a9a9a900;
+            color: white;
+            font-size: 1.5rem;
+            width: 9rem;
+            outline: 0;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-color: white;
+        }
     }
-    .weather-temperatur {
+    
+    .weather-icon{
+        position: relative;
+        display: inline-block;
+        font: normal normal normal 14px/1 owfont;
+        font-size: 3rem;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transform: translate(0, 0);
     }
-    .weather-humidity {
-    }
+    
 }

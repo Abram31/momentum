@@ -1,6 +1,9 @@
 @import 'base';
 
 .date-phrase {
+    display: flex;
+    flex-direction: column;
+    gap:.5rem;
     text-align: center;
 
 }

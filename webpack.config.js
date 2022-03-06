@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 
@@ -25,7 +25,7 @@ module.exports = ({ development }) => ({
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
-    assetModuleFilename: 'assets/img/[name][ext]',
+    publicPath: '',
   },
   module: {
     rules: [
@@ -36,11 +36,31 @@ module.exports = ({ development }) => ({
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
-        type: 'asset/resource',
+        type: 'asset',
+        // use: [
+        //   {
+        //     loader: 'file-loader',
+        //     options: {
+        //       name: '[name].[ext]',
+        //       outputPath: 'assets/img',
+        //       publicPath: ''
+        //     },
+        //   }
+        // ]
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf)$/i,
-        type: 'asset/resource',
+        type: 'asset',
+        // use: [
+        //   {
+        //     loader: 'file-loader',
+        //     options: {
+        //       name: '[name].[ext]',
+        //       outputPath: 'assets/fonts',
+        //       publicPath: '',
+        //     },
+        //   }
+        // ]
       },
       {
         test: /\.css$/i,
@@ -48,11 +68,35 @@ module.exports = ({ development }) => ({
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        use: [ {
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            publicPath:(resourcePath, context) => {
+              return path.relative(path.dirname(resourcePath),context) + '/';
+            }
+          }
+        },
+           'css-loader', 
+           'sass-loader'
+          ],
       },
       {
         test: /\.html$/i,
         loader: "html-loader",
+      },
+      {
+        test: /\.(mp3|wav)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              type: 'asset',
+              outputPath: 'assets/audio',
+              publicPath: '',
+            },
+          }
+        ]
       },
     ],
   },
@@ -60,9 +104,9 @@ module.exports = ({ development }) => ({
     ...esLintPlugin(development),
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new HtmlWebpackPlugin({ template: './src/index.html' }),
-    new CopyPlugin({
+    new CopyWebpackPlugin({
       patterns: [{
-        from: 'public',
+        from: path.resolve(__dirname, 'src/assets'), to: path.resolve(__dirname, 'dist/assets' ),
         noErrorOnMissing: true,
       }],
     }),

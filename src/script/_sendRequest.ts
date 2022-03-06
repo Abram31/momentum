@@ -10,6 +10,5 @@ export class SendRequest {
     const dataRequest: any = await res.json();
 
     data[keyObj] = dataRequest;
-    console.log(data);
   }
 }

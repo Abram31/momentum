@@ -13,24 +13,44 @@
         background-repeat: no-repeat;
         width:$sizePlayPausePrevNext;
         height: $sizePlayPausePrevNext;
+        transition: .5s;
+        cursor: pointer;
+
     
     }
         .player-arrows-prev {
-            background-image: url(../assets/svg/play-prev.svg);
+            background-image: url(../assets/img/play-prev.svg);
         }
         .player-arrows-play-pause {
-            background-image: url(../assets/svg/play.svg);
+            background-image: url(../assets/img/play.svg);
+
     
         }
         .player-arrows-next {
-            background-image: url(../assets/svg/play-next.svg);
-    
+            background-image: url(../assets/img/play-next.svg);
+            
+        }
+        .player-arrows-prev:active,
+        .player-arrows-play-pause:active,
+        .player-arrows-next:active {
+            transform: scale(0.6);
         }
     
     }
 
     .play-list {
+        padding: 0;
         list-style:none;
+        transition: .5s;
+        
+        .track {
+        transition: .5s;
+
+        }
+        .track-active {
+           color: gold;
+
+        }
 
         .track:before {
             content: '\2713';

@@ -56,14 +56,14 @@ export const playPauseAudio = (event?: any) => {
   if (event.target.classList.contains('player-arrows-play-pause')) {
     if (audio.paused) {
       console.log(blockPlayPause);
-      blockPlayPause!.style.backgroundImage = 'url(../assets/img/pause.svg)';
+      blockPlayPause!.style.backgroundImage = 'url(./assets/img/pause.svg)';
       audio!.src = playList[track.numberAudio].src;
       Array.from(blockPlayList!.childNodes).forEach((element:any) => element.classList.remove('track-active'));
       blockPlayList?.childNodes[track.numberAudio].classList.add('track-active');
 
       audio!.play();
     } else {
-      blockPlayPause!.style.backgroundImage = 'url(../assets/img/play.svg)';
+      blockPlayPause!.style.backgroundImage = 'url(./assets/img/play.svg)';
       audio.pause();
       Array.from(blockPlayList!.childNodes).forEach((element:any) => element.classList.remove('track-active'));
     }

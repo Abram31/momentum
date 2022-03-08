@@ -11,7 +11,7 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json",
-    // "tsconfigRootDir": momentum,
+    // "tsconfigRootDir": "momentum",
     "sourceType": "module",
   },
   "plugins": [

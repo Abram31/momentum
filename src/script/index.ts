@@ -1,6 +1,7 @@
+/* eslint-disable import/no-cycle */
+
 import '../scss/style.scss';
 import '../scss/owfontRegular.scss';
-
 
 import { innerDate, innerMonthDay } from './_date';
 import { innerCreetings, saveName, showName } from './_creetings';
@@ -11,7 +12,7 @@ import { changeBackground, date, body } from './_changeBackground';
 
 // eslint-disable-next-line import/no-cycle
 import {
-  requestWeather, addIconsWeather, inputCity, changeCityWeather
+  requestWeather, addIconsWeather, inputCity, changeCityWeather,
 } from './_weather';
 
 // -------------------------------------------Player----------------------------------------------
@@ -23,7 +24,7 @@ export const data: any = {
 };
 export const track: any = {
   numberAudio: Number,
-}
+};
 
 blockUpdatePhrases?.addEventListener('click', innerQuotes);
 body?.addEventListener('click', changeBackground);
@@ -45,15 +46,5 @@ changeBackground();
 innerPlayList();
 
 requestWeather.then(() => { addIconsWeather(); });
-
-// inputCity.addEventListener('keydown', ()=> console.log('Enter'))
-body?.addEventListener('keydown', changeCityWeather)
-
-// body?.addEventListener('keydown', (event)=> {
-  //   console.log(event.code);
-  
-  // });
-  
-  
-  body?.addEventListener('click', playPauseAudio);
-  
+body?.addEventListener('keydown', changeCityWeather);
+body?.addEventListener('click', playPauseAudio);

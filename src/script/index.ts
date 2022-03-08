@@ -30,7 +30,14 @@ blockUpdatePhrases?.addEventListener('click', innerQuotes);
 body?.addEventListener('click', changeBackground);
 
 window.addEventListener('beforeunload', saveName);
-window.addEventListener('load', showName);
+window.addEventListener('load', (): void => {
+  showName();
+  innerCreetings();
+  innerQuotes();
+  requestWeather.then(() => { addIconsWeather(); });
+});
+innerPlayList();
+changeBackground();
 
 track.numberAudio = 0;
 
@@ -38,13 +45,5 @@ setInterval(() => {
   innerDate(); innerMonthDay();
 }, 1000);
 
-innerCreetings();
-
-innerQuotes();
-
-changeBackground();
-innerPlayList();
-
-requestWeather.then(() => { addIconsWeather(); });
 body?.addEventListener('keydown', changeCityWeather);
 body?.addEventListener('click', playPauseAudio);

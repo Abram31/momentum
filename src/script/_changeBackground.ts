@@ -6,6 +6,7 @@ export const changeBackground = (event?: any) => {
   const data: Date = new Date();
 
   let pictureСounter = 1;
+  localStorage.setItem('pictureNumber', '1');
   let partOfDay;
   if (event?.path[0].classList.contains('arrows-right')) {
     if (localStorage.getItem('pictureNumber')) {
